@@ -20,8 +20,8 @@ class Solution {
 
     public boolean isBST(TreeNode root, long min, long max){
         if(root == null) return true;
-        if(root.val>min && root.val<=max){
-            boolean ans1 = isBST(root.left,min,root.val-1);
+        if(root.val>min && root.val<max){
+            boolean ans1 = isBST(root.left,min,root.val);
             boolean ans2 = isBST(root.right,root.val,max);
             return ans1&&ans2;
         }
